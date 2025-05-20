@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juristech Ferarum Alvarez Gonzalez | Abogados Laboral y Penal</title>
+    <style>
+        :root {
+            --primary: #161616;
+            --secondary: #EFCFA0;
+            --light: #f8f3eb;
+            --dark: #343a40;
+            --danger: #dc3545;
+        }
+        
+        body {
+            font-family: "Copperplate Gothic";
+            line-height: 1.6;
+            color: #5d0000;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e8c252;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .team {
+            background-color: var(--light);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .team-info p {
+            color: var(--dark);
+            margin-top: 0;
+        }
+        
+        .contact {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            margin-top: 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255,255,255,0.9);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            width: 100%;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            .about, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo"> 
+                <img src="juristech ferarum.png" width="100" height="90" alt="Logotipo Juritech Ferarum Alvarez Gonzalez" />
+                <div class="logo-text"> 
+                    <h1>Juritech Ferarum | Alvarez González</h1> 
+                    <p>Abogados Especializados</p>
+                </div>
+            </div>  
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#equipo">Equipo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2>"Defendemos tu libertad, protegemos tus derechos."</h2>
+            <p style="text-align: justify;">
+                En un mundo donde tus derechos pueden ser vulnerados en cualquier momento, necesitas más que un abogado: necesitas un estratega. 
+                Nos especializamos en Derecho Penal y Laboral, ofreciendo defensa implacable y asesoría experta para enfrentar cualquier desafío legal.
+                Si enfrentas acusaciones penales, luchamos por tu libertad con tácticas innovadoras y una defensa agresiva. 
+                Si has sido víctima de injusticias laborales, protegemos tus derechos para que recibas lo que mereces.
+                Aquí no creemos en soluciones genéricas. Cada caso es único, y tu defensa debe ser impecable. 
+                Consulta con nosotros y convierte la incertidumbre en estrategia.
+            </p> 
+            <a href="#contacto" class="btn">Consulta Gratis</a>
+            <a href="#servicios" class="btn btn-outline">Nuestros Servicios</a>
+        </div>
+    </section>
+    
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios Jurídicos</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Derecho Laboral">
+                    <div class="service-content">
+                        <h3>Derecho Laboral</h3>
+                        <p>Asesoría y representación en despidos injustificados, acoso laboral, liquidaciones, demandas por horas extras no pagadas, negociación colectiva y más.</p>
+                        <a href="#contacto" class="btn">Consultar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Derecho Penal">
+                    <div class="service-content">
+                        <h3>Derecho Penal</h3>
+                        <p>Defensa en procesos penales, asesoría a víctimas, recursos de apelación, juicios orales, libertad bajo fianza y protección contra acusaciones falsas.</p>
+                        <a href="#contacto" class="btn">Consultar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Asesoría Legal">
+                    <div class="service-content">
+                        <h3>Asesoría Legal Corporativa</h3>
+                        <p>Prevención de riesgos legales para empresas, cumplimiento normativo, contratos laborales, políticas internas y defensa en inspecciones de trabajo.</p>
+                        <a href="#contacto" class="btn">Consultar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="about">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Nuestro Despacho">
+                </div>
+                <div>
+                    <h3>Juritech Ferarum Alvarez Gonzalez Abogados</h3>
+                    <p style="text-align: justify;">Somos una firma legal especializada en derecho laboral y penal, comprometidos con la excelencia y la defensa de los derechos de nuestros clientes.</p>
+                    <p style="text-align: justify;">Fundado en 2018, hemos representado con éxito a más de 300 clientes en casos complejos, obteniendo resultados favorables en el 90% de nuestros casos.</p>
+                    <p style="text-align: justify;">Nuestro enfoque combina conocimiento técnico, experiencia práctica y un trato personalizado para cada caso.</p>
+                    <p style="text-align: justify;">Creemos en la justicia accesible y en el derecho de toda persona a una defensa adecuada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipo" class="team">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Lic. Saul Eduardo Gonzalez Galvan">
+                    <div class="team-info">
+                        <h3>Lic. Saul Eduardo Gonzalez Galvan</h3>
+                        <p>Especialista en Derecho laboral</p>
+                        <p>8 años defendiendo derechos de trabajadores</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Lic. Beatriz Adriana Alvarez">
+                    <div class="team-info">
+                        <h3>Lic. Beatriz Adriana Alvarez Vargas</h3>
+                        <p>Especialista en Derecho penal</p>
+                        <p>12 años de experiencia en defensa penal</p> 
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Lic. Galván">
+                    <div class="team-info">
+                        <h3>Lic. Carlos Galván</h3>
+                        <p>Especialista en Derecho Corporativo</p>
+                        <p>10 años asesorando empresas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 style="section-title">Contáctanos</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p><strong>Dirección:</strong> Calle Jurídica 123, Col. Centro, Ciudad de México</p>
+                    <p><strong>Teléfono:</strong> 9987190463 / 5523431253</p>
+                    <p><strong>Email:</strong> juristechferarum@gmail.com</p>
+                    <p><strong>Horario:</strong> Lunes a Viernes 24 hrs, Sabados y domingos de 8:00am a 3:00pm</p>
+                    <p>Ofrecemos consultas iniciales gratuitas para evaluar tu caso.</p>
+                    <div class="contact-form" class="" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nombre completo</label>
+                                <input type="text" id="name" name="name" placeholder="Nombre completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Teléfono">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Selecciona un servicio</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="laboral">Derecho Laboral</option>
+                                    <option value="penal">Derecho Penal</option>
+                                    <option value="corporativo">Asesoría Corporativa</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Describe tu caso</label>
+                                <textarea id="message" name="message" placeholder="Describe tu caso" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Enviar Consulta</button>
+                        </form>       
+                    </div> 
+
+                </div>            
+            </div>                
+        </div>                
+    </section>
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61575061606801"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2023 Juritech Ferarum Alvarez González Abogados. Todos los derechos reservados.</p>
+            <p><a href="#" style="color: var(--secondary);">Aviso de Privacidad</a> | <a href="#" style="color: var(--secondary);">Términos y Condiciones</a></p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome para iconos -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
